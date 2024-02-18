@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Docker Container</title>
+</head>
+<body>
+    <h1>Create Docker Container</h1>
+    <form action="/create-container" method="post">
+        <label for="cpu_quota">CPU Quota (%)</label>
+        <input type="number" id="cpu_quota" name="cpu_quota" required>
+        <label for="memory_limit">Memory Limit (in bytes)</label>
+        <input type="number" id="memory_limit" name="memory_limit" required>
+        <label for="existing_container_id">Existing Docker ID</label>
+        <input type="text" id="existing_container_id" name="existing_container_id">
+        <button type="submit">Create Container</button>
+    </form>
+</body>
+</html>

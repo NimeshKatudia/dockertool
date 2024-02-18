@@ -34,7 +34,7 @@ with open(log_file_path, 'rb') as attachment:
 smtp_server = 'smtp.microsoft.com'
 smtp_port = 587
 smtp_username = 'jimil.shah279@svkmmumbai.onmicrosoft.com'
-smtp_password = '#Jim$@18'
+smtp_password = ''
 
 with smtplib.SMTP(smtp_server, smtp_port) as server:
     server.starttls()
