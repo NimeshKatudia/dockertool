@@ -39,3 +39,5 @@ npm run dev
 ```
 5. Run priv.py
 
+
+https://qrco.de/beo9n
