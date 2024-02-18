@@ -18,12 +18,47 @@ function DashboardCard05() {
 
   // Dummy data to be looped
   const data = [
-    57.81, 57.75, 55.48, 54.28, 53.14, 52.25, 51.04, 52.49, 55.49, 56.87, 53.73,
-    56.42, 58.06, 55.62, 58.16, 55.22, 58.67, 60.18, 61.31, 63.25, 65.91, 64.44,
-    65.97, 62.27, 60.96, 59.34, 55.07, 59.85, 53.79, 51.92, 50.95, 49.65, 48.09,
-    49.81, 47.85, 49.52, 50.21, 52.22, 54.42, 53.42, 50.91, 58.52, 53.37, 57.58,
-    59.09, 59.36, 58.71, 59.42, 55.93, 57.71, 50.62, 56.28, 57.37, 53.08, 55.94,
-    55.82, 53.94, 52.65, 50.25,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_1"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_2"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_3"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_4"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_5"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_6"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_7"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_8"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_9"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_10"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_11"]["total_usage"] / 10000000,
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "cpu_stats"
+    ]["per_process"]["CPU_12"]["total_usage"] / 10000000,
+  ];
+  const datamem = [
+    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
+      "memory_stats"
+    ]["total_usage"] / 10000000,
   ];
 
   const [slicedData, setSlicedData] = useState(data.slice(0, range));
@@ -98,7 +133,7 @@ function DashboardCard05() {
           {
             data2[
               "ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"
-            ]["cpu_stats"]["total_usage"]
+            ]["name"]
           }
         </h2>
         <Tooltip className="ml-2">
