@@ -5,7 +5,7 @@ import data2 from "../../../../container_stats.json";
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
 
-function DashboardCard05() {
+function DashboardCard005() {
   // IMPORTANT:
   // Code below is for demo purpose only, and it's not covered by support.
   // If you need to replace dummy data with real data,
@@ -18,44 +18,6 @@ function DashboardCard05() {
 
   // Dummy data to be looped
   const data = [
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_1"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_2"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_3"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_4"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_5"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_6"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_7"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_8"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_9"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_10"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_11"]["total_usage"] / 10000000,
-    data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
-      "cpu_stats"
-    ]["per_process"]["CPU_12"]["total_usage"] / 10000000,
-  ];
-  const datamem = [
     data2["ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"][
       "memory_stats"
     ]["total_usage"] / 10000000,
@@ -102,7 +64,7 @@ function DashboardCard05() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter]);
 
-  const chartData = {
+  const chartData2 = {
     labels: slicedLabels,
     datasets: [
       // Indigo line
@@ -130,14 +92,13 @@ function DashboardCard05() {
     <div className="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
       <header className="px-5 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center">
         <h2 className="font-semibold text-slate-800 dark:text-slate-100">
-          <span>Container Name: </span>
           {
             data2[
               "ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185"
             ]["name"]
           }
         </h2>
-        {/* <Tooltip className="ml-2">
+        <Tooltip className="ml-2">
           <div className="text-xs text-center whitespace-nowrap">
             Built with{" "}
             <a
@@ -149,13 +110,13 @@ function DashboardCard05() {
               Chart.js
             </a>
           </div>
-        </Tooltip> */}
+        </Tooltip>
       </header>
       {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
-      <RealtimeChart data={chartData} width={595} height={248} />
+      <RealtimeChart data={chartData2} width={595} height={248} />
     </div>
   );
 }
 
-export default DashboardCard05;
+export default DashboardCard005;

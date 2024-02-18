@@ -11,6 +11,7 @@ import DashboardCard02 from "../partials/dashboard/DashboardCard02";
 import DashboardCard03 from "../partials/dashboard/DashboardCard03";
 import DashboardCard04 from "../partials/dashboard/DashboardCard04";
 import DashboardCard05 from "../partials/dashboard/DashboardCard05";
+import DashboardCard005 from "../partials/dashboard/DashboardCard005";
 import DashboardCard06 from "../partials/dashboard/DashboardCard06";
 import DashboardCard07 from "../partials/dashboard/DashboardCard07";
 import DashboardCard08 from "../partials/dashboard/DashboardCard08";
@@ -33,7 +34,7 @@ function Dashboard() {
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
         {/*  Site header */}
-        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        {/* <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
 
         <main>
           <div
@@ -73,24 +74,24 @@ function Dashboard() {
               <DashboardCard04 /> */}
               {/* Line chart (Real Time Value) */}
               <DashboardCard05 />
-              <DashboardCard05 />
-              <DashboardCard05 />
+              {/* <DashboardCard005 />
+                <DashboardCard05 /> */}
               {/* Doughnut chart (Top Countries) */}
               <DashboardCard06 />
               {/* Table (Top Channels) */}
-              <DashboardCard07 />
+              {/* <DashboardCard07 /> */}
               {/* Line chart (Sales Over Time) */}
-              <DashboardCard08 />
+              {/* <DashboardCard08 /> */}
               {/* Stacked bar chart (Sales VS Refunds) */}
-              <DashboardCard09 />
+              {/* <DashboardCard09 /> */}
               {/* Card (Customers) */}
-              <DashboardCard10 />
+              {/* <DashboardCard10 /> */}
               {/* Card (Reasons for Refunds) */}
-              <DashboardCard11 />
+              {/* <DashboardCard11 /> */}
               {/* Card (Recent Activity) */}
-              <DashboardCard12 />
+              {/* <DashboardCard12 /> */}
               {/* Card (Income/Expenses) */}
-              <DashboardCard13 />
+              {/* <DashboardCard13 /> */}
             </div>
           </div>
         </main>
