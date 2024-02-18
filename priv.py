@@ -1,7 +1,6 @@
+import re
 import docker
-import time
-from flask import Flask, render_template, request, jsonify
-import json
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 client = docker.from_env()
@@ -12,39 +11,36 @@ def index():
 
 @app.route('/create-container', methods=['POST'])
 def create_container():
-    cpu_quota = request.form['cpu_quota']
-    memory_limit = request.form['memory_limit']
+    cpu_quota = int(request.form['cpu_quota'])
+    memory_limit = int(request.form['memory_limit'])
     existing_container_id = request.form['existing_container_id']
+    
+    if cpu_quota < 1:
+        return "CPU quota cannot be less than 1ms (i.e. 1000)"
 
-    # Get the existing container
-    container = client.containers.get(existing_container_id)
-
-    # Define the container parameters
     container_params = {
-        'image': f'{container.image.tags[0]}:{container.image.tags[1]}',
-        'name': f'my_container_{int(time.time())}',
-        'cpu_period': 100000,
-        'cpu_quota': int(cpu_quota),
-        'mem_limit': f'{memory_limit}b',
-        'healthcheck': {
-            'test': ['CMD', 'python', '-c', 'import sys; sys.exit(0)'],
-            'interval': 30000000000,
-            'retries': 3,
-            'start_period': 30000000000,
-            'timeout': 30000000000
-        }
+        'cpu_quota': cpu_quota,
+        'mem_limit': memory_limit,
     }
+    
+    if re.match(r'^[a-f0-9]{64}$', existing_container_id):
+        try:
+            container = client.containers.get(existing_container_id)
+            container_params['image'] = f'{container.image.tags[0]}:{container.image.tags[1]}' if container.image.tags else None
+        except docker.errors.NotFound:
+            return f"Container with ID {existing_container_id} does not exist."
+    else:
+        container_params['image'] = existing_container_id
 
-    # Create the Docker container
-    new_container = client.containers.create(**container_params)
-
-    # Start the container
-    new_container.start()
-
-    return jsonify({
-        'message': f'Container created with CPU quota {cpu_quota}% and memory limit {memory_limit} bytes',
-        'container_id': new_container.id
-    })
-
+    try:
+        new_container = client.containers.create(**container_params)
+        new_container.start()
+        return f"Container '{new_container.name}' created and started successfully!"
+    except docker.errors.APIError as e:
+        if "CPU cfs quota can not be less than 1ms" in str(e):
+            return "Error: CPU quota cannot be less than 1ms (i.e. 1000)"
+        else:
+            return f"Error: {e}"
+    
 if __name__ == '__main__':
     app.run(debug=True)
