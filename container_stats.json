@@ -1,0 +1,77 @@
+{
+  "ab8165b5037922caa1193e0a41c4fad9165164d1a65e60a51a476f1f6f5c6185": {
+    "name": "portainer",
+    "cpu_stats": {
+      "per_process": {
+        "CPU_1": {
+          "total_usage": 354878600,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_2": {
+          "total_usage": 35731300,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_3": {
+          "total_usage": 362657600,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_4": {
+          "total_usage": 110560600,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_5": {
+          "total_usage": 348788400,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_6": {
+          "total_usage": 205817500,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_7": {
+          "total_usage": 437182400,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_8": {
+          "total_usage": 42062500,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_9": {
+          "total_usage": 398480600,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_10": {
+          "total_usage": 9554600,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_11": {
+          "total_usage": 309565700,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        },
+        "CPU_12": {
+          "total_usage": 112993100,
+          "usage_in_kernelmode": 1530000000,
+          "usage_in_usermode": 1250000000
+        }
+      },
+      "total_usage": 2728272900,
+      "usage_in_kernelmode": 1530000000,
+      "usage_in_usermode": 1250000000
+    },
+    "memory_stats": {
+      "total_usage": 57802752,
+      "max_usage": 58470400,
+      "limit": 8188481536
+    }
+  }
+}
